@@ -1,12 +1,14 @@
 package com.example.rappers.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rappers.R
+import com.example.rappers.RapperActivity
 
 class LetterAdapter(val context: Context, val dataset: List<Char>) : RecyclerView.Adapter<LetterAdapter.WordviewHolder>() {
 
@@ -21,7 +23,8 @@ class LetterAdapter(val context: Context, val dataset: List<Char>) : RecyclerVie
 
     override fun onBindViewHolder(holder: WordviewHolder, position: Int) {
         holder.wordButton.text = dataset[position].toString()
-        holder.wordButton.setOnClickListener {  }
+        val intent =  Intent(holder.itemView.context, RapperActivity::class.java).putExtra("char",dataset[position].toString())
+        holder.wordButton.setOnClickListener { context.startActivity(intent) }
     }
 
     override fun getItemCount() = dataset.size

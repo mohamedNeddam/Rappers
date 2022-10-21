@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         wordRV = findViewById(R.id.WordRecycleView)
-        wordRV.adapter = LetterAdapter(this,DataSource().letterList())
-        wordRV.setHasFixedSize(false)
+        wordRV.adapter = LetterAdapter(this,DataSource().loadLetterList())
+//        wordRV.setHasFixedSize(false)
     }
 }
