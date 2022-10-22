@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Rappers</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="rapper_list_fragment_label">Rappers That Start With {letter}</string>
+
 </resources>

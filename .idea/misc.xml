@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/FLutter/Rappers/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/FLutter/Rappers/app/src/main/res/layout/activity_rapper.xml" value="0.1" />
+        <entry key="..\:/FLutter/Rappers/app/src/main/res/layout/fragment_justtest.xml" value="0.1" />
+        <entry key="..\:/FLutter/Rappers/app/src/main/res/layout/fragment_letter_list.xml" value="0.22083333333333333" />
+        <entry key="..\:/FLutter/Rappers/app/src/main/res/layout/fragment_rapper_list.xml" value="0.1" />
+        <entry key="..\:/FLutter/Rappers/app/src/main/res/layout/fragment_word_list.xml" value="0.22083333333333333" />
         <entry key="..\:/FLutter/Rappers/app/src/main/res/layout/list_item.xml" value="0.21979166666666666" />
       </map>
     </option>

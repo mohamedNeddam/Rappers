@@ -10,7 +10,9 @@ import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rappers.R
 
-class RapperAdapter(val context: Context, val dataSet: List<String>) : RecyclerView.Adapter<RapperAdapter.RapperViewHolder>() {
+class RapperAdapter(val context: Context, val char:  Char) : RecyclerView.Adapter<RapperAdapter.RapperViewHolder>() {
+
+    val dataSet = (listOf<String>("nas", "rakim", "the notorious B.I.G.", "Jay-Z", "Eminem", "André 3000", "Kanye West", "Snoop Dogg", "Lil Wayne", "Kendrick Lamar", "Rick Ross",  "Twista")).filter { it.startsWith(char.toString() ) }
     class RapperViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview){
         val textbutton : Button = itemview.findViewById(R.id.text_button)
     }

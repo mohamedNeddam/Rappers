@@ -6,13 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.rappers.LetterListFragmentDirections
 import com.example.rappers.R
-import com.example.rappers.RapperActivity
+//import com.example.rappers.RapperActivity
 
-class LetterAdapter(val context: Context, val dataset: List<Char>) : RecyclerView.Adapter<LetterAdapter.WordviewHolder>() {
+class LetterAdapter : RecyclerView.Adapter<LetterAdapter.WordviewHolder>() {
 
-    class WordviewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    val dataset = ('A').rangeTo('Z').toList()
+    class WordviewHolder( itemView: View) : RecyclerView.ViewHolder(itemView) {
         val wordButton: Button = itemView.findViewById(R.id.text_button)
     }
 
@@ -23,8 +26,13 @@ class LetterAdapter(val context: Context, val dataset: List<Char>) : RecyclerVie
 
     override fun onBindViewHolder(holder: WordviewHolder, position: Int) {
         holder.wordButton.text = dataset[position].toString()
-        val intent =  Intent(holder.itemView.context, RapperActivity::class.java).putExtra("char",dataset[position].toString())
-        holder.wordButton.setOnClickListener { context.startActivity(intent) }
+//        val intent =  Intent(holder.itemView.context, RapperActivity::class.java).putExtra("char",dataset[position])
+
+//        holder.itemView.findNavController().navigate(action)
+        holder.wordButton.setOnClickListener {
+            val action = LetterListFragmentDirections.actionLetterListFragmentToRapperListFragment(letter = dataset[position].toString())
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
     override fun getItemCount() = dataset.size
